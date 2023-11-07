@@ -260,10 +260,10 @@
         tdImg.src = "https://www.mediakey.tv/fileadmin/user_upload/EPICODE.png"
         
         newTableTd1.appendChild(tdImg)
-        newTableTd2.textContent = "Nome2"
-        newTableTd3.textContent = "Prodotto2"
-        newTableTd4.textContent = "Quantità2"
-        newTableTd5.textContent = "Prezzo2"
+        newTableTd2.textContent = "Epicode"
+        newTableTd3.textContent = "Corso FullStack"
+        newTableTd4.textContent = "1"
+        newTableTd5.textContent = "Inestimabile"
 
         newTableTr.appendChild(newTableTd1)
         newTableTr.appendChild(newTableTd2)
@@ -293,10 +293,20 @@
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {
-        let h2Color = document.getElementsByTagName('h2')
-        h2Color.id = "changeMyColor"
-      };
+      let h2Color = document.querySelector('h2')
+      h2Color.id = "changeMyColor";
+
+        const changeColorWithRandom = function () {
+          const red = Math.floor(Math.random() * 256)
+          const green = Math.floor(Math.random() * 256)
+          const blue = Math.floor(Math.random() * 256)
+
+          const randomColor = `rgb(${red},${green},${blue})`
+
+          h2Color.style.color = randomColor
+        }
+
+      h2Color.onclick = changeColorWithRandom
 
       /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
