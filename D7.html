@@ -246,19 +246,57 @@
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {};
+      const addRow = function () {
+        let newTableTr = document.createElement("tr")
+
+        let newTableTd1 = document.createElement("td")
+        let newTableTd2 = document.createElement("td")
+        let newTableTd3 = document.createElement("td")
+        let newTableTd4 = document.createElement("td")
+        let newTableTd5 = document.createElement("td")
+
+        let tdImg = document.createElement('img')
+
+        tdImg.src = "https://www.mediakey.tv/fileadmin/user_upload/EPICODE.png"
+        
+        newTableTd1.appendChild(tdImg)
+        newTableTd2.textContent = "Nome2"
+        newTableTd3.textContent = "Prodotto2"
+        newTableTd4.textContent = "Quantità2"
+        newTableTd5.textContent = "Prezzo2"
+
+        newTableTr.appendChild(newTableTd1)
+        newTableTr.appendChild(newTableTd2)
+        newTableTr.appendChild(newTableTd3)
+        newTableTr.appendChild(newTableTd4)
+        newTableTr.appendChild(newTableTd5)
+
+        document.querySelector('table').appendChild(newTableTr)
+      };
+
+      addRow()
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
-      const hideAllImages = function () {};
+      const hideAllImages = function () {
+        let tdImgs = document.querySelectorAll('td > img')
+        for (let i = 0; i < tdImgs.length; i++) {
+          tdImgs[i].style.display = 'none'
+        }
+      };
+
+      hideAllImages()
 
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {};
+      const changeColorWithRandom = function () {
+        let h2Color = document.getElementsByTagName('h2')
+        h2Color.id = "changeMyColor"
+      };
 
       /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
