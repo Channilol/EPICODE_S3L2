@@ -213,13 +213,31 @@
     */
 
       const generateTable = function () {
-        let newTable = createElement("table")
-        let newTableTd = createElement("td")
-        let newTableTr = createElement("tr")
-        newTableTr.appendChild(newTableTd)
+        let newTable = document.createElement("table")
+
+        let newTableTr = document.createElement("tr")
+
+        let newTableTd1 = document.createElement("td")
+        let newTableTd2 = document.createElement("td")
+        let newTableTd3 = document.createElement("td")
+        let newTableTd4 = document.createElement("td")
+        let newTableTd5 = document.createElement("td")
+
+        newTableTd1.textContent = "Immagine"
+        newTableTd2.textContent = "Nome"
+        newTableTd3.textContent = "Prodotto"
+        newTableTd4.textContent = "Quantità"
+        newTableTd5.textContent = "Prezzo"
+
+        newTableTr.appendChild(newTableTd1)
+        newTableTr.appendChild(newTableTd2)
+        newTableTr.appendChild(newTableTd3)
+        newTableTr.appendChild(newTableTd4)
+        newTableTr.appendChild(newTableTd5)
+
         newTable.appendChild(newTableTr)
+
         document.getElementById("tableArea").appendChild(newTable)
-        newTableTd.innerHTML = "Prova TD"
       };
 
       generateTable()
